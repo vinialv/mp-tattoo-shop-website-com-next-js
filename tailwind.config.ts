@@ -13,11 +13,16 @@ const config: Config = {
         londrina: "var(--font-londrina)",
         island: "var(--font-island)",
       },
+      container: {
+        center: true,
+      },
       colors: {
         branco: "#ffffff",
         cinza: {
           200: "#cccccc",
           300: "#636363",
+          400: "#494949",
+          700: "#212121",
           900: "#191919",
           950: "#161616",
         },

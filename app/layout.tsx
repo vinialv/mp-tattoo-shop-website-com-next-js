@@ -1,22 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Londrina_Solid, Island_Moments } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "900"],
-  variable: "--font-inter",
-});
-const londrina = Londrina_Solid({
-  subsets: ["latin"],
-  weight: "900",
-  variable: "--font-londrina",
-});
-const island = Island_Moments({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-island",
-});
+import Navbar from "./_components/navbar";
+import Footer from "./_components/footer";
+import { inter } from "./_lib/fonts";
 
 export const metadata: Metadata = {
   title: "Sandro Luz | Tattoo Shop",
@@ -29,11 +15,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="pt-br"
-      className={`${inter.variable} ${londrina.variable} ${island.variable}`}
-    >
-      <body>{children}</body>
+    <html lang="pt-br" className={`${inter.className}`}>
+      <body className="bg-cinza-900 text-branco flex flex-col min-h-screen">
+        <Navbar />
+        <div className="flex flex-col flex-1">{children}</div>
+        <Footer />
+      </body>
     </html>
   );
 }
